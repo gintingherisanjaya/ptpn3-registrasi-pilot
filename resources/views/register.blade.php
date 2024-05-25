@@ -83,7 +83,7 @@
                     <div class="col-md-6 mb-3">
                         <div>
                             <label for="username" class="form-label">Username <span style="color: red">*</span></label>
-                            <input type="text" class="form-control" id="username" readonly>
+                            <input type="text" class="form-control" id="username" name="username" readonly>
                         </div>
                     </div>
                 </div>
@@ -129,6 +129,11 @@
                             <input type="number" max='99' class="form-control" id="afdeling" name="afdeling" required value="{{ old('afdeling') }}" >
                             @error('afdeling')
                                 <div class="text-danger" style="font-size:12px">{{ $message }}</div>
+                            @enderror
+                            @error('username')
+                                <div class="text-danger" style="font-size:12px">
+                                    This Afdeling haven't more pilots. Please choose another afdeling for this plant
+                                </div>
                             @enderror
                         </div>
                     </div>

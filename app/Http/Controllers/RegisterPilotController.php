@@ -27,6 +27,7 @@ class RegisterPilotController extends Controller
             'email' => 'required|string|email|max:50',
             'nik_sap' => 'required|string|numeric|digits_between:1,10',
             'jabatan' => 'required|string|alpha_num|max:50',
+            'username' => 'unique:pilot',
             'no_hp' => 'required|string|numeric|digits_between:5,20|unique:pilot',
             'password' => 'required|string|min:8|max:20|confirmed',
             'password_confirmation' => 'required|string|min:8|max:20',
