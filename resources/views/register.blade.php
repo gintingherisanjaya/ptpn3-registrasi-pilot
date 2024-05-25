@@ -16,7 +16,7 @@
     <div class="n4-bg">
         <img src="<?=asset('img/logo_n4.png')?>" class="n4-logo mb-3" alt="">
         <p style="text-align:center;font-size: 18px;margin-bottom:5px;font-weight:600;color:orangered">REGISTRASI PILOT AGENT ALBUM DEPLOY</p>
-        <p style="font-weight: 600">DASHBOARD ALBUM TBM</p>
+        <p style="font-weight: 600">DASHBOARD ALBUM TBM PTPN III</p>
         <div class="n4-box">
             <img class="drone" src="<?=asset('img/drone_dji_mavic2_pro.png')?>" alt="">
             <form method="POST" action="{{ route('register.post') }}">
@@ -83,10 +83,7 @@
                     <div class="col-md-6 mb-3">
                         <div>
                             <label for="username" class="form-label">Username <span style="color: red">*</span></label>
-                            <input type="username" class="form-control" id="username" name="username" required maxlength="30" value="{{ old('username') }}" >
-                            @error('username')
-                                <div class="text-danger" style="font-size:12px">{{ $message }}</div>
-                            @enderror
+                            <input type="text" class="form-control" id="username" readonly>
                         </div>
                     </div>
                 </div>
@@ -147,5 +144,27 @@
             </div>
         </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <script>
+        // Fungsi untuk memperbarui nilai username dan teks label
+        function updateUsername() {
+            // Ambil nilai dari kode_kebun dan afdeling
+            var kodeKebun = document.querySelector("select#kebun").value;
+            var afdeling = document.querySelector("input#afdeling").value;
+
+            // Gabungkan nilai-nilai tersebut untuk membentuk username
+            const text = parseInt(afdeling) >= 10 ? 'AFD' : 'AFD0'
+            var username =  'N003' +kodeKebun + text + afdeling
+
+            // Set nilai dari elemen username
+            document.querySelector("input#username").value = username;
+        }
+
+        // Tambahkan event listener pada kode_kebun dan afdeling
+        document.querySelector("select#kebun").addEventListener("change", updateUsername);
+        document.querySelector("input#afdeling").addEventListener("input", updateUsername);
+        document.addEventListener('DOMContentLoaded', updateUsername);
+    </script>
+
   </body>
 </html>

@@ -14,16 +14,16 @@ class CreatePilotTable extends Migration
     public function up()
     {
         Schema::create('pilot', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->string('id', 50)->unique();
             $table->string('nama', 50);
-            $table->string('email', 50)->unique();
-            $table->string('nik_sap', 10)->unique();
+            $table->string('email', 50);
+            $table->string('nik_sap', 10);
             $table->string('jabatan', 50);
             $table->string('no_hp', 20)->unique();
             $table->string('username', 30)->unique();
             $table->string('password', 100);
             $table->string('kode_kebun', 6);
-            $table->string('afdeling', 3);
+            $table->string('afdeling', 7);
             $table->timestamps();
         });
     }
