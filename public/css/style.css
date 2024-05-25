@@ -1,0 +1,79 @@
+/* Format */
+*
+{
+    margin: 0;
+    padding: 0;
+    outline: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+.page
+{
+    background: linear-gradient(to bottom, #9fe5ff 0%, #aeffd9 100%);
+    display: block;
+    position: fixed;
+    max-width: 100%;
+    opacity: 1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transition: all 0.3s ease;
+
+    touch-action: pan-x pan-y;
+    user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -ms-touch-action: pan-x pan-y;
+    zoom: reset;
+    zoom: 1;
+}
+
+.n4-bg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-repeat: no-repeat;
+    padding: 20px;
+    /* Tambahkan properti background-size untuk menutupi seluruh elemen */
+}
+.n4-box{
+    display: block;
+    width: 800px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    border:1px solid #ddd;
+    box-shadow: 2px 4px 23px -10px rgba(0,0,0,0.93);
+    -webkit-box-shadow: 2px 4px 23px -10px rgba(0,0,0,0.93);
+    -moz-box-shadow: 2px 4px 23px -10px rgba(0,0,0,0.93);
+}
+
+.n4-logo{
+    width:80px;
+}
+
+.drone{
+    display: flex;
+    width: 250px;
+    margin: auto;
+    margin-bottom: 10px;
+    filter: drop-shadow(1px 8px 3px #0000005e);
+}
+@media(max-width:850px){
+    .n4-box{
+        width: 100%;
+    }
+}
+@media(max-width:350px){
+    .drone{
+        width: 100%;
+    }
+}
+
